@@ -1,5 +1,6 @@
 #include "utils.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #define ERR_ARGS_COUNT (-1)
 #define ERR_WRONG_FLG (-2)
@@ -28,14 +29,14 @@ int main(int argc, const char** argv) {
     if (argc < 3) {
         return ERR_ARGS_COUNT;
     }
-
-    int Test_case = atoi(argv[1]);
+    char* end = NULL;
+    int Test_case = strtol(argv[1], &end, 10);
     const char* data;
     data = argv[2];
 
     switch (Test_case) {
         case TST_FOO_FIX: {
-            int to = atoi(data);
+            int to = strtol(data, &end, 10);
             size_t ticks_count = timer_from(to);
             printf("%zu\n", ticks_count);
             break;
