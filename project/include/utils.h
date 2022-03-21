@@ -2,7 +2,7 @@
 #define PROJECT_INCLUDE_UTILS_H_
 
 
-int timer_from(unsigned char from);
+int timer_from(int from);
 
 
 #endif  // PROJECT_INCLUDE_UTILS_H_
