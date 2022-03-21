@@ -1,4 +1,5 @@
 #include "utils.h"
+#include "prst.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -46,7 +47,6 @@ int main(int argc, const char** argv) {
                  int base = strtol(data, &end, 10);
                  int pow =  strtol(argv[3], &end, 10);
                  int res = custom_pow(base, pow);    // TODO(Eduard): Implement me
-
                  printf("%i\n", res);
             } else {
                 return ERR_ARGS_COUNT;
@@ -54,7 +54,10 @@ int main(int argc, const char** argv) {
             break;
         }
         case TST_MOD_IMPL: {
-            // int num = atoi(data);
+             int num = strtol(data, &end, 10);
+             int resul = prostoe(num);
+             printf("%d", resul);
+             break;
 
             // TODO(Eduard): Print to stdout `1` if `num` is prime number and `0` otherwise
             // This function MUST be implemented in
