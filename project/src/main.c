@@ -43,11 +43,11 @@ int main(int argc, const char** argv) {
         }
         case TST_FOO_IMPL: {
             if (argc == 4) {
-                // int base = atoi(data);
-                // int pow =  atoi(argv[3]);
-                // int res = custom_pow(base, pow);    // TODO: Implement me
+                 int base = strtol(data, &end, 10);
+                 int pow =  strtol(argv[3], &end, 10);
+                 int res = custom_pow(base, pow);    // TODO(Eduard): Implement me
 
-                // printf("%i\n", res);
+                 printf("%i\n", res);
             } else {
                 return ERR_ARGS_COUNT;
             }
