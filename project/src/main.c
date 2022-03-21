@@ -1,5 +1,6 @@
 #include "utils.h"
 #include "prst.h"
+#include "recs.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,6 +10,7 @@
 #define TST_FOO_FIX     1
 #define TST_FOO_IMPL    2
 #define TST_MOD_IMPL    3
+#define TST_MOD_RECURS  4
 
 
 /* NOTE(stitaevskiy):
@@ -63,6 +65,11 @@ int main(int argc, const char** argv) {
             // This function MUST be implemented in
             // a separate C-module (not in `main` or `utils` module)
         }
+        case TST_MOD_RECURS: {
+	     int num = (int) strtol(data, &end, 10);
+	printf("%c", recursia(num));
+	     break;
+	    }
         default: {
             return ERR_WRONG_FLG;
         }
