@@ -1,6 +1,7 @@
 #include "utils.h"
-#include "prst.h"
-#include "recs.h"
+#include "is_prime.h"
+#include "from_1_to_n.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -57,7 +58,7 @@ int main(int argc, const char** argv) {
         }
         case TST_MOD_IMPL: {
              int num = strtol(data, &end, 10);
-             int resul = prostoe(num);
+             int resul = is_prime(num);
              printf("%d", resul);
              break;
 
@@ -67,7 +68,7 @@ int main(int argc, const char** argv) {
         }
         case TST_MOD_RECURS: {
 	     int num = (int) strtol(data, &end, 10);
-	printf("%c", recursia(num));
+	printf("%c", from_1_to_n(num));
 	     break;
 	    }
         default: {
