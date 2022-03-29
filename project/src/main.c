@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 #define ERR_ARGS_COUNT (-1)
-#define ERR_WRONG_FLG (-2)
+#define ERR_WRONG_FLG  (-2)
 
 #define TST_FOO_FIX     1
 #define TST_FOO_IMPL    2
@@ -35,13 +35,18 @@ int main(int argc, const char** argv) {
         return ERR_ARGS_COUNT;
     }
     char* end = NULL;
-    int Test_case = strtol(argv[1], &end, 10);
-    const char* data;
-    data = argv[2];
+    int test_case = strtol(argv[1], &end, 10);
+    if (*end != '\0') {
+      return ERR_ARGS_COUNT;
+  }
+    const char* data = argv[2];
 
-    switch (Test_case) {
+    switch (test_case) {
         case TST_FOO_FIX: {
             int to = strtol(data, &end, 10);
+            if (*end != '\0') {
+      return ERR_ARGS_COUNT;
+  }
             size_t ticks_count = timer_from(to);
             printf("%zu", ticks_count);
             break;
@@ -49,7 +54,13 @@ int main(int argc, const char** argv) {
         case TST_FOO_IMPL: {
             if (argc == 4) {
                  int base = strtol(data, &end, 10);
+                 if (*end != '\0') {
+      return ERR_ARGS_COUNT;
+  }
                  int pow =  strtol(argv[3], &end, 10);
+                 if (*end != '\0') {
+      return ERR_ARGS_COUNT;
+  }
                  int res = custom_pow(base, pow);    // TODO(Eduard): Implement me
                  printf("%i\n", res);
             } else {
@@ -59,6 +70,9 @@ int main(int argc, const char** argv) {
         }
         case TST_MOD_IMPL: {
              int num = strtol(data, &end, 10);
+             if (*end != '\0') {
+      return ERR_ARGS_COUNT;
+  }
              int resul = is_prime(num);
              printf("%d", resul);
              break;
@@ -69,6 +83,9 @@ int main(int argc, const char** argv) {
         }
         case TST_MOD_RECURS: {
 	     int num = (int) strtol(data, &end, 10);
+	     if (*end != '\0') {
+      return ERR_ARGS_COUNT;
+  }
 	printf("%c", from_1_to_n(num));
 	     break;
 	    }

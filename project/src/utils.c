@@ -1,4 +1,5 @@
 #include "utils.h"
+
 #include <stdio.h>
 
 int timer_from(int from) {
