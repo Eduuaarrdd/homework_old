@@ -1,7 +1,8 @@
+#include "from_1_to_n.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "from_1_to_n.h"
 
 char from_1_to_n(int num) {
     if (num == 1) {

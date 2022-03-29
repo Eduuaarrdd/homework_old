@@ -1,6 +1,7 @@
-#include "utils.h"
-#include "is_prime.h"
 #include "from_1_to_n.h"
+#include "is_prime.h"
+#include "utils.h"
+
 
 #include <stdio.h>
 #include <stdlib.h>
