@@ -22,9 +22,12 @@ int timer_from(int from) {
 
 int custom_pow(int base, int power) {
 	int result = 1;
+	if (power >=0) {
 	for (int i = 0; i < power; ++i)
 	result = result * base;
-	  if (power < 0) {
+	if (power == 0 && base == 0)  {
+		 return -1; 
+		 } } else {
 		 return -1;
 		 }
     return result;

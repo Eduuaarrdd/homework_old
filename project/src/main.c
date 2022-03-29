@@ -48,8 +48,7 @@ int main(int argc, const char** argv) {
             if (*end != '\0') {
       		return ERR_ARGS_COUNT;
 		}
-            size_t ticks_count = timer_from(to);
-            printf("%zu", ticks_count);
+            printf("%d", timer_from(to));
             break; }
             return ERR_ARGS_COUNT;
             break;
@@ -62,7 +61,9 @@ int main(int argc, const char** argv) {
                  if (*end != '\0') {
       			return ERR_ARGS_COUNT; }
                  int res = custom_pow(base, pow);    // TODO(Eduard): Implement me
-                 printf("%i\n", res); 
+                 printf("%i\n", res);
+                 if (res == -1) {
+                 printf("Ошибка ввода"); } 
                  break; } 
             return ERR_ARGS_COUNT;
             break;
