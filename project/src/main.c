@@ -42,55 +42,54 @@ int main(int argc, const char** argv) {
     const char* data = argv[2];
 
     switch (test_case) {
-        case TST_FOO_FIX: {
+        case TST_FOO_FIX:
+        if (argc == 3) { 
             int to = strtol(data, &end, 10);
             if (*end != '\0') {
-      return ERR_ARGS_COUNT;
-  }
+      		return ERR_ARGS_COUNT;
+		}
             size_t ticks_count = timer_from(to);
             printf("%zu", ticks_count);
+            break; }
+            return ERR_ARGS_COUNT;
             break;
-        }
-        case TST_FOO_IMPL: {
+        case TST_FOO_IMPL: 
             if (argc == 4) {
                  int base = strtol(data, &end, 10);
                  if (*end != '\0') {
-      return ERR_ARGS_COUNT;
-  }
+      			return ERR_ARGS_COUNT; }
                  int pow =  strtol(argv[3], &end, 10);
                  if (*end != '\0') {
-      return ERR_ARGS_COUNT;
-  }
+      			return ERR_ARGS_COUNT; }
                  int res = custom_pow(base, pow);    // TODO(Eduard): Implement me
-                 printf("%i\n", res);
-            } else {
-                return ERR_ARGS_COUNT;
-            }
+                 printf("%i\n", res); 
+                 break; } 
+            return ERR_ARGS_COUNT;
             break;
-        }
-        case TST_MOD_IMPL: {
+        case TST_MOD_IMPL: 
+        if (argc == 3) {
              int num = strtol(data, &end, 10);
              if (*end != '\0') {
-      return ERR_ARGS_COUNT;
-  }
+      		return ERR_ARGS_COUNT; }
              int resul = is_prime(num);
              printf("%d", resul);
+             break; }
+             return ERR_ARGS_COUNT;
              break;
 
             // TODO(Eduard): Print to stdout `1` if `num` is prime number and `0` otherwise
             // This function MUST be implemented in
             // a separate C-module (not in `main` or `utils` module)
-        }
-        case TST_MOD_RECURS: {
+            
+        case TST_MOD_RECURS:
+        if (argc == 3) {
 	     int num = (int) strtol(data, &end, 10);
 	     if (*end != '\0') {
-      return ERR_ARGS_COUNT;
-  }
+      		return ERR_ARGS_COUNT; }
 	printf("%c", from_1_to_n(num));
-	     break;
-	    }
+	break; }
+	return ERR_ARGS_COUNT;
+	break;
         default: {
-            return ERR_WRONG_FLG;
-        }
-    }
+            return ERR_WRONG_FLG; } }
 }
