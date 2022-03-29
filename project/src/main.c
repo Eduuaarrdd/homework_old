@@ -61,7 +61,7 @@ int main(int argc, const char** argv) {
                  if (*end != '\0') {
       			return ERR_ARGS_COUNT; }
                  int res = custom_pow(base, pow);    // TODO(Eduard): Implement me
-                 printf("%i\n", res);
+                 printf("%d\n", res);
                  if (res == -1) {
                  printf("Ошибка ввода"); } 
                  break; } 
@@ -72,8 +72,7 @@ int main(int argc, const char** argv) {
              int num = strtol(data, &end, 10);
              if (*end != '\0') {
       		return ERR_ARGS_COUNT; }
-             int resul = is_prime(num);
-             printf("%d", resul);
+             printf("%d", is_prime(num));
              break; }
              return ERR_ARGS_COUNT;
              break;
@@ -87,7 +86,7 @@ int main(int argc, const char** argv) {
 	     int num = (int) strtol(data, &end, 10);
 	     if (*end != '\0') {
       		return ERR_ARGS_COUNT; }
-	printf("%c", from_1_to_n(num));
+	from_1_to_n(num);
 	break; }
 	return ERR_ARGS_COUNT;
 	break;

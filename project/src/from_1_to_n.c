@@ -4,14 +4,17 @@
 #include <stdio.h>
 
 
-char from_1_to_n(int num) {
-    if (num == 1) {
-        printf("1");
-    } else {
-        if (num > 0)
-            printf("%c %i", from_1_to_n(num-1), num);
-        else
-            printf("%c %i", from_1_to_n(num+1), num);
-    }
-    return '\0';
+void from_1_to_n(int num) {
+    if (num > 0) {
+    	    num = num - 1;
+    	    from_1_to_n(num);
+    	    if (num == 0) {
+    	    printf("1"); } else {
+            printf(" %d", num+1); } }
+    if (num < 0) {
+            num = num + 1;
+            from_1_to_n(num);
+            if (num == 0) {
+            printf("1 0 -1");} else {
+            printf(" %d", num-1); } } 
   }
