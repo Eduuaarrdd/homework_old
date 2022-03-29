@@ -1,6 +1,5 @@
 #include "from_1_to_n.h"
 
-#include <stdlib.h>
 #include <stdio.h>
 
 

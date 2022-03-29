@@ -6,13 +6,11 @@ int timer_from(int from) {
     size_t counter = 0;
     if (from >= 0) {
     for (int i = from; i >= 0; --i) {
-    printf("%d", i);
-        ++counter;
-    	if (i) {
-    	 printf(" ");
-    	 } else {
-    	 printf("\n");
-    	 }
+    if (i) {
+    printf("%d ", i);  
+    } else {
+    printf("%d\n", i); }
+    ++counter;
         }
         }
     return counter;
