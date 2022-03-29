@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 
+#define ERROR (-1)
 int timer_from(int from) {
     size_t counter = 0;
     if (from >= 0) {
@@ -22,11 +23,11 @@ int custom_pow(int base, int power) {
 	int result = 1;
 	if (power >=0) {
 	for (int i = 0; i < power; ++i)
-	result = result * base;
+	result *= base;
 	if (power == 0 && base == 0)  {
-		 return -1; 
+		 return ERROR; 
 		 } } else {
-		 return -1;
+		 return ERROR;
 		 }
     return result;
 }
