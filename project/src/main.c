@@ -21,8 +21,8 @@ int main(int argc, const char** argv) {
     char* end = NULL;
     int test_case = strtol(argv[1], &end, 10);
     if (*end != '\0') {
-      return ERR_ARGS_COUNT;
-      }
+      	return ERR_ARGS_COUNT;
+    }
     const char* data = argv[2];
 
     switch (test_case) {
@@ -33,56 +33,54 @@ int main(int argc, const char** argv) {
       		return ERR_ARGS_COUNT;
 		}
             printf("%d", timer_from(to));
-            break; 
-            }
+            break;
+        }
             return ERR_ARGS_COUNT;
             break;
-        case TST_FOO_IMPL: 
+        case TST_FOO_IMPL:
             if (argc == 4) {
                  int base = strtol(data, &end, 10);
                  if (*end != '\0') {
-      			return ERR_ARGS_COUNT; 
+      			return ERR_ARGS_COUNT;
       			}
 		int pow = strtol(argv[3], &end, 10);
                  if (*end != '\0') {
       			return ERR_ARGS_COUNT;
       			}
-                 int res = custom_pow(base, pow);    
+                 int res = custom_pow(base, pow);
                  if (res == ERR_ARGS_COUNT) {
-                 printf("Ошибка ввода"); 
-                 } else { 
-                 printf("%d\n", res); 
-                 } 
-                 break; 
-                 } 
+			printf("Ошибка ввода");
+                 } else {
+                 	printf("%d\n", res);
+                 }
+                 break;
+             }
             return ERR_ARGS_COUNT;
             break;
-        case TST_MOD_IMPL: 
+        case TST_MOD_IMPL:
         if (argc == 3) {
              int num = strtol(data, &end, 10);
              if (*end != '\0') {
-      		return ERR_ARGS_COUNT; 
+      		return ERR_ARGS_COUNT;
       		}
              printf("%d", is_prime(num));
-             break; 
-             }
+             break;
+        }
              return ERR_ARGS_COUNT;
              break;
-                     
         case TST_MOD_RECURS:
         if (argc == 3) {
 	     int num = (int) strtol(data, &end, 10);
 	     if (*end != '\0') {
-      		return ERR_ARGS_COUNT; 
-      		}
+      		return ERR_ARGS_COUNT;
+      	     }
 	from_1_to_n(num);
-	break; 
+	break;
 	}
 	return ERR_ARGS_COUNT;
 	break;
         default: {
-            return ERR_WRONG_FLG; 
-            } 
-            }
-            
+            return ERR_WRONG_FLG;
+	}
+    }
 }
