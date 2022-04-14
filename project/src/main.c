@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "main.h"
 
 
 
@@ -21,10 +21,6 @@ int main() {
 
             case     Action_update_client_base:
                 update_client_base();
-                break;
-
-            case     Action_test_write:
-                test_write();
                 break;
 
             default:
