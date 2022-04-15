@@ -1,19 +1,20 @@
-#include "utils.h"
-#include "main_module.h"
+#include "tests.h"
+
 
 void test_write() {
-    data expected_data = {1, "Nikita", "Novozhilov", "Moscow", "89688406014", 100, 180, 15};
+    data expected_data = {1, "Lera", "Veselova", "Moscow", "8968840111", 100, 180, 15};
 
     FILE *client_base_file = fopen(client_base_filename, "w");
 
         if (!client_base_file) {
             puts("Not access");
+            return;
         } else {
-            fclose(client_base_file);
+            fclose(client_base_file);  // если файл не закрыть, то дальнейшая функция не будет работать
         }
     write_to_file(client_base_filename, &expected_data);
 
-    data got_data = {0, "", "", "", "", 0.0, 0.0, 0.0};
+    data got_data = {0};
 
     read_from_file(client_base_filename, &got_data);
 
