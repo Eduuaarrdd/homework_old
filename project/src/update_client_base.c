@@ -1,8 +1,8 @@
 #include "update_client_base.h"
 
 void update_client_base() {
-     data transfer = {0, "", "", "", "", 0, 0, 0};
-     data client_data = {0, "", "", "", "", 0, 0, 0};
+     data transfer = {0};
+     data client_data = {0};
 
 
     FILE *client_base_file = fopen(client_base_filename, "r");
