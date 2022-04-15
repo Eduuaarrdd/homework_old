@@ -55,6 +55,6 @@ test: $(TARGET)
 
 memtest: $(TARGET)
 	./btests/run.sh $(TARGET) --memcheck
-		   
+	   
 clean:
 	rm -rf $(TARGET) $(TST_TARGET) *.dat

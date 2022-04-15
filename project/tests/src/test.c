@@ -2,7 +2,7 @@
 
 
 void test_write() {
-    data expected_data = {1, "Lera", "Veselova", "Moscow", "8968841111", 100, 180, 15};
+    data expected_data = {1, "Lera", "Veselova", "Moscow", "8968840111", 100, 180, 15};
 
     FILE *client_base_file = fopen(client_base_filename, "w");
 
