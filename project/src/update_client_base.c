@@ -32,3 +32,4 @@ void update_client_base() {
         fclose(transaction_base_file);
         fclose(update_client_base_file);
 }
+}
