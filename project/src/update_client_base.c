@@ -10,15 +10,9 @@ void update_client_base() {
     FILE *update_client_base_file = fopen(update_client_base_filename, "w");
 
 
-    if (!client_base_file) {
-    fprintf(stderr, access_error);
-    }
-    if (!transaction_base_file) {
-    fprintf(stderr, access_error);
-    }
-    if (!update_client_base_file) {
+    if (!client_base_file || !transaction_base_file || !update_client_base_file) {
         fprintf(stderr, access_error);
-    }
+    } else {
         while (fscanf(client_base_file, format(FORMAT_TO_SCANF_CLIENT_BASE), &client_data.id,
                     client_data.name, client_data.surname, client_data.address,
                     client_data.tel_number, &client_data.indebtedness,
@@ -37,4 +31,5 @@ void update_client_base() {
         fclose(client_base_file);
         fclose(transaction_base_file);
         fclose(update_client_base_file);
+}
 }
