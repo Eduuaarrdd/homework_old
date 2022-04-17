@@ -16,32 +16,39 @@ SRCS = \
 	project/src/write_to_transaction_base.c\
 	project/src/update_client_base.c
 
+
 # Test
 TST_TARGET = ./test.out
 
 HDRS_TST_DIR = project/tests/include
 
 TST_HDRS = \
-           project/include \
 		   project/tests/include
            	
 TST_SRCS = \
-		   project/src/write_to_file.c \
-		   	project/tests/src/*.c
+		   project/tests/src/main.c\
+		   project/tests/src/test.c\
+		   project/tests/src/write_to_file.c\
+		   project/tests/src/format.c
 
-.PHONY: all build rebuild check test memtest clean
+.PHONY: all build tst rebuild check test memtest clean
 
 all: clean check test memtest
 
+build: $(TARGET)
+
 $(TARGET): $(SRCS)
 	$(CC) -Wpedantic -Wall -Wextra -Werror -I $(HDRS_DIR) -o $(TARGET) $(CFLAGS) $(SRCS)
+	
+rebuild: clean build	
+
+tst: $(TST_TARGET)
 		
 $(TST_TARGET): $(TST_SRCS)
 	$(CC) -Wpedantic -Wall -Wextra -Werror -I $(HDRS_TST_DIR) -o $(TST_TARGET) $(CFLAGS) $(TST_SRCS)
 
-build: $(TARGET)
 
-rebuild: clean build
+rebuild: clean tst
 
 check:
 	./run_linters.sh	

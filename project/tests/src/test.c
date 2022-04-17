@@ -7,7 +7,7 @@ void test_write() {
     FILE *client_base_file = fopen(client_base_filename, "w");
 
         if (!client_base_file) {
-            puts("Not access");
+            puts("Not acces");
             return;
         } else {
             fclose(client_base_file);  // если файл не закрыть, то дальнейшая функция не будет работать
