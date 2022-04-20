@@ -1,8 +1,12 @@
 TARGET = ./main.out
+HDRS_DIR = project/include
 VALGRIND_LOG = "valgrind.log"
 
 SRCS = \
 	   project/src/main.c \
+	   project/src/get_lexem.c \
+	   project/src/extract_str.c \
+	   project/src/amount_chr.c
 
 .PHONY: all check build test memtest rebuild clean
 
@@ -21,8 +25,11 @@ memtest: $(TARGET)
 
 rebuild: clean build
 
+# $(TARGET): $(SRCS)
+#	$(CC) -Wall -Wextra -Werror $(addprefix -I,$(HDRS)) -o $(TARGET) $(CFLAGS) $(SRCS)
+
 $(TARGET): $(SRCS)
-	$(CC) -Wall -Wextra -Werror $(addprefix -I,$(HDRS)) -o $(TARGET) $(CFLAGS) $(SRCS)
+	$(CC) -Wpedantic -Wall -Wextra -Werror -I $(HDRS_DIR) -o $(TARGET) $(CFLAGS) $(SRCS)
 
 clean:
 	rm -f $(TARGET) ${VALGRIND_LOG}
