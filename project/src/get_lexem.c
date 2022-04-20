@@ -2,20 +2,22 @@
 
 lexem_t get_lexem(char* data) {
 	lexem_t lexem;
-		if (strstr(*data, "L_FROM")) {
-		data = &strstr(*data, "L_FROM");
-		lexem = L_FROM;
+	char* str_from = "FROM:";
+	char* str_to = "TO:";
+	char* str_date = "DATE:";
+		if ((strstr(*data, *str_from)) != NULL) {
+			data = strstr(*data, *str_from);
+			return L_FROM;
 		}
-		if (strstr(*data, "L_TO")) {
-		data = &strstr(*data, "L_TO");
-		lexem = L_TO;
+		if ((strstr(*data, *str_to)) != NULL) {
+			data = strstr(*data, *str_to);
+			return L_TO;
 		}
-		if (strstr(*data, "L_DATE")) {
-		data = &strstr(*data, "L_DATE");
-		lexem = L_DATE;
+		if ((strstr(*data, *str_date)) != NULL) {
+			data = strstr(*data, *str_date);
+			return L_DATE;
 		}
-	lexem = L_END;
-	return lexem; 
+	return L_END; 
 	}
 			
 	

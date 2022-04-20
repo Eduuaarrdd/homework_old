@@ -10,7 +10,6 @@ int amount_chr (char *end, int length) {
 			if (isspace(*(++end))) {
 				//str_fr[++i] = ' '
 				return i;
-				break;
 			}
 			}
 	}

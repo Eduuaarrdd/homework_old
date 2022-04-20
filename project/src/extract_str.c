@@ -6,7 +6,7 @@ void extract_str(char *date) {
 	char str_out[MAX_SIZE];
 	int old_amount = 0;
 	lexem_t lexem = get_lexem(*data);
-	while (lexem !== L_END) {
+	while (lexem != L_END) {
 		switch (state) {
 			case (S_FROM): length = LENGTH_FROM;
 			case (S_TO): length = LENGTH_TO;
