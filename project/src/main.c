@@ -1,5 +1,6 @@
 #include <main.h>
 
+char* date;
 
 int main(int argc, const char **argv) {
 	if (argc != 2) {
