@@ -4,7 +4,7 @@ lexem_t get_lexem(char* data) {
 	lexem_t lexem;
 	char* str_from = "FROM:";
 	char* str_to = "TO:";
-	char* str_date = "DATE:";
+	char* str_dat = "DATE:";
 		if ((strstr(*data, *str_from)) != NULL) {
 			data = strstr(*data, *str_from);
 			return L_FROM;
@@ -13,8 +13,8 @@ lexem_t get_lexem(char* data) {
 			data = strstr(*data, *str_to);
 			return L_TO;
 		}
-		if ((strstr(*data, *str_date)) != NULL) {
-			data = strstr(*data, *str_date);
+		if ((strstr(*data, *str_dat)) != NULL) {
+			data = strstr(*data, *str_dat);
 			return L_DATE;
 		}
 	return L_END; 
